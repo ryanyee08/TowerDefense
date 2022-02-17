@@ -9,5 +9,4 @@ public class LevelManager : MonoBehaviour
 {
     // Waypoints stores the location of each waypoint we want the enemy to move to as it traverses the level
     public Transform[] waypoints;
-
 }

@@ -14,9 +14,14 @@ using UnityEngine.AI;
  */
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private LevelManager LevelManager;
+    [SerializeField] LevelManager LevelManager;
     [SerializeField] int EnemyMovementSpeed = 1;
     private int waypointIndex = 0;
+
+    private void Awake()
+    {
+        LevelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+    }
 
     private void Update()
     {
@@ -28,7 +33,7 @@ public class EnemyMovement : MonoBehaviour
         {
             // If this is the final waypoint then destroy the object
             if (waypointIndex == LevelManager.waypoints.Length - 1)
-            {
+            { 
                 Destroy(gameObject);
             }
 
